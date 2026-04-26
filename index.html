@@ -1,1 +1,1526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hildah Ngondoki — Executive Leader in Digital Health & AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Syne:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0a0a0f;
+    --cream: #f5f2ec;
+    --gold: #c9a84c;
+    --gold-light: #e8d5a3;
+    --slate: #2a3240;
+    --slate-mid: #4a5568;
+    --mist: #e8edf5;
+    --accent: #1a4a6e;
+    --accent-bright: #2563a8;
+    --rule: rgba(201,168,76,0.3);
+    --text-body: #1c1c2e;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Syne', sans-serif;
+    background: var(--cream);
+    color: var(--text-body);
+    overflow-x: hidden;
+  }
+
+  /* ── NOISE TEXTURE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.4;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 4rem;
+    background: rgba(245,242,236,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--slate-mid);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left {
+    background: var(--ink);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 8rem 4rem 5rem;
+    position: relative;
+  }
+
+  .hero-left::after {
+    content: '';
+    position: absolute;
+    top: 0; right: -1px; bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, transparent, var(--gold) 40%, transparent);
+  }
+
+  .hero-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 2rem;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .hero-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(3.5rem, 7vw, 6rem);
+    line-height: 0.95;
+    color: var(--cream);
+    margin-bottom: 0.3rem;
+  }
+
+  .hero-name em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    color: rgba(245,242,236,0.45);
+    margin-top: 1.5rem;
+    line-height: 1.8;
+  }
+
+  .hero-cta {
+    margin-top: 3rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.85rem 1.8rem;
+    border: 1px solid;
+    transition: all 0.25s;
+    cursor: pointer;
+  }
+
+  .btn-gold {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--ink);
+  }
+
+  .btn-gold:hover {
+    background: transparent;
+    color: var(--gold);
+  }
+
+  .btn-outline {
+    background: transparent;
+    border-color: rgba(245,242,236,0.3);
+    color: rgba(245,242,236,0.7);
+  }
+
+  .btn-outline:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  .hero-right {
+    background: var(--mist);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8rem 4rem 5rem;
+    position: relative;
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-bottom: 3rem;
+  }
+
+  .stat-card {
+    background: white;
+    padding: 2rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .stat-card:nth-child(1) { animation-delay: 0.1s; }
+  .stat-card:nth-child(2) { animation-delay: 0.2s; }
+  .stat-card:nth-child(3) { animation-delay: 0.3s; }
+  .stat-card:nth-child(4) { animation-delay: 0.4s; }
+
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+
+  .stat-card:hover::before { transform: scaleX(1); }
+
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 3rem;
+    line-height: 1;
+    color: var(--accent);
+    display: block;
+  }
+
+  .stat-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--slate-mid);
+    margin-top: 0.4rem;
+    display: block;
+  }
+
+  .hero-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--slate);
+    border-left: 2px solid var(--gold);
+    padding-left: 1.5rem;
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: 7rem 0; }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 4rem;
+  }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+    max-width: 6rem;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 3rem;
+  }
+
+  .section-title em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  /* ── ABOUT ── */
+  #about { background: white; }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  .about-left { position: sticky; top: 6rem; }
+
+  .about-portrait {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: var(--mist);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-portrait-inner {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--ink) 0%, var(--accent) 60%, var(--gold) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .portrait-monogram {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 8rem;
+    color: rgba(245,242,236,0.15);
+    letter-spacing: -0.05em;
+    line-height: 1;
+    user-select: none;
+  }
+
+  .portrait-overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 2rem;
+    background: linear-gradient(0deg, var(--ink) 0%, transparent 100%);
+  }
+
+  .portrait-flag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  .about-body p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.18rem;
+    line-height: 1.85;
+    color: var(--slate);
+    margin-bottom: 1.5rem;
+  }
+
+  .about-body p strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .competency-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .competency-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.6rem 1rem;
+    background: var(--mist);
+    color: var(--slate-mid);
+    border-left: 2px solid transparent;
+    transition: all 0.2s;
+  }
+
+  .competency-tag:hover {
+    border-left-color: var(--gold);
+    background: var(--cream);
+    color: var(--ink);
+  }
+
+  /* ── IMPACT NUMBERS BAND ── */
+  .impact-band {
+    background: var(--ink);
+    padding: 5rem 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .impact-band::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 120px,
+      rgba(201,168,76,0.04) 120px,
+      rgba(201,168,76,0.04) 121px
+    );
+  }
+
+  .impact-row {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    flex-wrap: wrap;
+  }
+
+  .impact-item {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+    padding: 2rem 3rem;
+    border-right: 1px solid rgba(201,168,76,0.15);
+    position: relative;
+  }
+
+  .impact-item:last-child { border-right: none; }
+
+  .impact-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 4rem;
+    color: var(--gold);
+    line-height: 1;
+    display: block;
+  }
+
+  .impact-desc {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(245,242,236,0.5);
+    margin-top: 0.6rem;
+    display: block;
+  }
+
+  /* ── EXPERIENCE ── */
+  #experience { background: var(--cream); }
+
+  .timeline {
+    position: relative;
+    padding-left: 2rem;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 1px;
+    background: linear-gradient(180deg, var(--gold) 0%, rgba(201,168,76,0.1) 100%);
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-bottom: 4rem;
+    padding-left: 3rem;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .timeline-item.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .timeline-dot {
+    position: absolute;
+    left: -2.35rem;
+    top: 0.4rem;
+    width: 10px;
+    height: 10px;
+    background: var(--gold);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(201,168,76,0.15);
+  }
+
+  .tl-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tl-org {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .tl-period {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--slate-mid);
+    letter-spacing: 0.08em;
+  }
+
+  .tl-role {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: var(--ink);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .tl-achievements {
+    list-style: none;
+  }
+
+  .tl-achievements li {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: var(--slate);
+    line-height: 1.7;
+    padding: 0.4rem 0;
+    padding-left: 1.2rem;
+    position: relative;
+  }
+
+  .tl-achievements li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-size: 0.75rem;
+    top: 0.6rem;
+  }
+
+  .tl-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 1rem;
+  }
+
+  .tl-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.7rem;
+    border: 1px solid var(--rule);
+    color: var(--slate-mid);
+  }
+
+  /* ── AI & TECH ── */
+  #ai-tech { background: var(--ink); }
+
+  #ai-tech .section-title { color: var(--cream); }
+  #ai-tech .section-label { color: var(--gold); }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(201,168,76,0.15);
+  }
+
+  .project-card {
+    background: var(--ink);
+    padding: 2.5rem 2rem;
+    transition: background 0.3s;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+
+  .project-card:hover { background: #0f1520; }
+  .project-card:hover::before { transform: scaleX(1); }
+
+  .project-icon {
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+    display: block;
+  }
+
+  .project-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--cream);
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+  }
+
+  .project-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.95rem;
+    color: rgba(245,242,236,0.55);
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+  }
+
+  .project-tech {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* ── TECH STACK ── */
+  .tech-stack {
+    margin-top: 5rem;
+  }
+
+  .stack-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(201,168,76,0.6);
+    margin-bottom: 1.5rem;
+  }
+
+  .stack-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .stack-pill {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    border: 1px solid rgba(201,168,76,0.25);
+    color: rgba(245,242,236,0.5);
+    transition: all 0.2s;
+  }
+
+  .stack-pill:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: rgba(201,168,76,0.05);
+  }
+
+  /* ── SECTORS ── */
+  #sectors { background: white; }
+
+  .sectors-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .sector-card {
+    padding: 2.5rem 2rem;
+    border: 1px solid var(--mist);
+    position: relative;
+    transition: all 0.3s;
+  }
+
+  .sector-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(10,10,15,0.06);
+  }
+
+  .sector-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 3.5rem;
+    color: var(--mist);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .sector-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--ink);
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .sector-body {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: var(--slate-mid);
+    line-height: 1.7;
+  }
+
+  .sector-geo {
+    margin-top: 1rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  /* ── EDUCATION ── */
+  #education { background: var(--cream); }
+
+  .edu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .edu-card {
+    padding: 2rem 2rem 2rem 0;
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .edu-year {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 2rem;
+    color: var(--mist);
+    line-height: 1;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    letter-spacing: 0.08em;
+  }
+
+  .edu-inst {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.3rem;
+  }
+
+  .edu-degree {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 1.15rem;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+
+  .edu-location {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--slate-mid);
+    margin-top: 0.4rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* ── CONTACT / FOOTER ── */
+  #contact {
+    background: var(--ink);
+    padding: 6rem 0;
+    text-align: center;
+  }
+
+  #contact .section-label { justify-content: center; }
+  #contact .section-label::after { display: none; }
+
+  .contact-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: var(--cream);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+
+  .contact-title em {
+    color: var(--gold);
+    font-style: italic;
+  }
+
+  .contact-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: rgba(245,242,236,0.5);
+    font-style: italic;
+    margin-bottom: 3rem;
+  }
+
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 4rem;
+  }
+
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(245,242,236,0.55);
+    text-decoration: none;
+    padding: 0.85rem 1.8rem;
+    border: 1px solid rgba(245,242,236,0.15);
+    transition: all 0.25s;
+  }
+
+  .contact-link:hover {
+    color: var(--gold);
+    border-color: var(--gold);
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(201,168,76,0.1);
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  .footer-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.9rem;
+    color: rgba(245,242,236,0.3);
+  }
+
+  .footer-copy {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    color: rgba(245,242,236,0.25);
+    letter-spacing: 0.1em;
+  }
+
+  /* ── WHO ADVISORY BADGE ── */
+  .who-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 1.4rem;
+    border: 1px solid rgba(201,168,76,0.4);
+    background: rgba(201,168,76,0.06);
+    margin-bottom: 2rem;
+  }
+
+  .who-badge-icon {
+    font-size: 1rem;
+  }
+
+  .who-badge-text {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    line-height: 1.5;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .hero-left > * {
+    animation: fadeUp 0.7s ease both;
+  }
+
+  .hero-left .hero-eyebrow { animation-delay: 0.1s; }
+  .hero-left .hero-name { animation-delay: 0.25s; }
+  .hero-left .hero-title { animation-delay: 0.4s; }
+  .hero-left .who-badge { animation-delay: 0.5s; }
+  .hero-left .hero-cta { animation-delay: 0.55s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1024px) {
+    nav { padding: 1.2rem 2rem; }
+    .container { padding: 0 2rem; }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 10rem 2rem 4rem; }
+    .hero-right { padding: 3rem 2rem 5rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .about-left { position: relative; top: auto; }
+    .about-portrait { max-width: 300px; }
+    .projects-grid { grid-template-columns: 1fr 1fr; }
+    .sectors-grid { grid-template-columns: 1fr; }
+    .edu-grid { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+    .hero-stats { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 640px) {
+    nav { padding: 1rem; }
+    .nav-links { gap: 1.2rem; }
+    .hero-left { padding: 8rem 1.5rem 3rem; }
+    .hero-right { padding: 2rem 1.5rem 4rem; }
+    .container { padding: 0 1.5rem; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .impact-item { min-width: 150px; padding: 1.5rem; }
+    .timeline { padding-left: 1rem; }
+    .timeline-item { padding-left: 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">H. Ngondoki</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#ai-tech">AI & Tech</a></li>
+    <li><a href="#sectors">Sectors</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Executive Leader · Data Scientist · Systems Architect</div>
+    <h1 class="hero-name">
+      Hildah<br><em>Ngondoki</em>
+    </h1>
+    <div class="hero-title">
+      Global Director, Digital Health &amp; AI &nbsp;·&nbsp; WHO Expert Advisor<br>
+      MSc Information &amp; Data Science, UC Berkeley &nbsp;·&nbsp; BSc Computer Science &nbsp;·&nbsp; PMP<br>
+      17+ Years · Kenya · Uganda · Rwanda · Nigeria · India · Burkina Faso
+    </div>
+    <div class="who-badge">
+      <span class="who-badge-icon">🌍</span>
+      <span class="who-badge-text">WHO Technical Working Group<br>Digital Public Infrastructure in Health — Expert Member, 2025</span>
+    </div>
+    <div class="hero-cta">
+      <a href="#experience" class="btn btn-gold">View Leadership Journey</a>
+      <a href="https://linkedin.com/in/hngondoki" target="_blank" class="btn btn-outline">LinkedIn ↗</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-stats">
+      <div class="stat-card">
+        <span class="stat-number">100k+</span>
+        <span class="stat-label">Community Health Workers Equipped</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">$60M+</span>
+        <span class="stat-label">Grants Unlocked via Digital Strategy</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">47</span>
+        <span class="stat-label">Kenyan Counties, National eCHIS Scale-up</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">2M+</span>
+        <span class="stat-label">People with Improved Healthcare Access</span>
+      </div>
+    </div>
+    <blockquote class="hero-tagline">
+      "Bridging the gap between complex technical infrastructure and national health outcomes — at the speed governments need."
+    </blockquote>
+  </div>
+</section>
+
+<!-- IMPACT BAND -->
+<div class="impact-band">
+  <div class="impact-row">
+    <div class="impact-item">
+      <span class="impact-num">7,800</span>
+      <span class="impact-desc">Teachers Empowered Across 3 Countries</span>
+    </div>
+    <div class="impact-item">
+      <span class="impact-num">80%</span>
+      <span class="impact-desc">Reduction in IT Mean Time to Resolve</span>
+    </div>
+    <div class="impact-item">
+      <span class="impact-num">0.90</span>
+      <span class="impact-desc">F1 Score — Responsible AI in Low-Resource Languages</span>
+    </div>
+    <div class="impact-item">
+      <span class="impact-num">27%</span>
+      <span class="impact-desc">Cost Reduction in ERP Requisitions</span>
+    </div>
+    <div class="impact-item">
+      <span class="impact-num">350k</span>
+      <span class="impact-desc">Pupil Records Integrated, Rwanda</span>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-left">
+        <div class="about-portrait">
+          <div class="about-portrait-inner">
+            <span class="portrait-monogram">HN</span>
+          </div>
+          <div class="portrait-overlay">
+            <div class="portrait-flag">Nairobi, Kenya &nbsp;·&nbsp; Global</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-body">
+        <div class="section-label">About</div>
+        <h2 class="section-title">Executive Director<br><em>turned System Builder</em></h2>
+
+        <p>I am a <strong>computer scientist, data scientist, and executive strategist</strong> with 17+ years of progressive impact — from engineering Safaricom's billing infrastructure to directing AI and digital health strategy across Africa, Asia, and beyond.</p>
+
+        <p>What makes me rare: I carry both the technical depth to <strong>architect ML pipelines, design data governance frameworks, and write production code</strong>, and the executive fluency to secure $60M+ in funding, chair global digital health committees, and counsel Ministries of Health on national-scale transformation.</p>
+
+        <p>I led Kenya's national Electronic Community Health Information System (eCHIS) scale-up to all 47 counties, digitized 100k+ community health workers, and am currently a <strong>WHO Expert Member</strong> on Digital Public Infrastructure in Health. I pursue a <strong>Master's in Information & Data Science at UC Berkeley</strong> alongside my executive responsibilities — because I believe a great Chief must remain technically sharp.</p>
+
+        <p>My work operates at the intersection of <strong>Responsible AI · Digital Public Infrastructure · Government Partnerships · Health Systems Strengthening</strong> — always Africa-led, always equity-centered, always built to last beyond donor cycles.</p>
+
+        <div class="competency-grid">
+          <div class="competency-tag">Executive Leadership</div>
+          <div class="competency-tag">AI Strategy & Ethics</div>
+          <div class="competency-tag">Digital Health Systems</div>
+          <div class="competency-tag">Government Partnerships</div>
+          <div class="competency-tag">Data Governance</div>
+          <div class="competency-tag">ML Engineering</div>
+          <div class="competency-tag">Resource Mobilization</div>
+          <div class="competency-tag">Responsible AI / NLP</div>
+          <div class="competency-tag">Program Scale-up</div>
+          <div class="competency-tag">Team Building (30+)</div>
+          <div class="competency-tag">DevOps & Cloud (AWS/GCP/Azure)</div>
+          <div class="competency-tag">FHIR / Interoperability</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="section-label">Leadership Journey</div>
+    <h2 class="section-title">17 Years of<br><em>Measurable Impact</em></h2>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="tl-meta">
+          <span class="tl-org">Living Goods</span>
+          <span class="tl-period">Aug 2024 – Present</span>
+        </div>
+        <div class="tl-role">Global Director, Digital Health &amp; Government Partnerships<br><small style="font-size:0.8rem;color:var(--slate-mid);font-family:'DM Mono',monospace;letter-spacing:0.08em">Kenya · Uganda · Burkina Faso</small></div>
+        <ul class="tl-achievements">
+          <li>Defined and operationalised the organisation's AI strategy — covering AI transparency, data security &amp; labelling, agentic-AI use cases, staff tooling, and AI policy.</li>
+          <li>Served as primary government advisor to Ministries of Health in Kenya, Uganda, Burkina Faso, Benin, Tanzania and Malawi, securing national digital systems agreements.</li>
+          <li>Designed Living Goods' Delivery Unit playbooks, enabling cost-effective digital adoption that translated directly into funding opportunities and geographic expansion.</li>
+          <li>Partnered with SwissRe experts to design sustainable public financing models for national-scale Digital Public Infrastructure — including cloud vs. local hosting cost-benefit analysis.</li>
+          <li>Led the Digital Health Committee as Chair under CHU4UHC, a multi-government partnership organisation.</li>
+          <li>Delivered AI-augmented Power BI dashboards with dynamic reporting and AI-assisted risk mapping from textual sources.</li>
+        </ul>
+        <div class="tl-tags">
+          <span class="tl-tag">AI Strategy</span>
+          <span class="tl-tag">Government Advisory</span>
+          <span class="tl-tag">Digital Health</span>
+          <span class="tl-tag">ITSM</span>
+          <span class="tl-tag">Public Finance</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="tl-meta">
+          <span class="tl-org">World Health Organization</span>
+          <span class="tl-period">Sept 2025 – Present</span>
+        </div>
+        <div class="tl-role">Expert Member — Technical Working Group,<br>Digital Public Infrastructure in Health</div>
+        <ul class="tl-achievements">
+          <li>Advising on adaptation of global digital health architecture, interoperability standards, and governance frameworks for national health information systems.</li>
+          <li>Contributing to WHO's strategy for scalable and secure digital public infrastructure emphasising user-centric standards and adaptation kits.</li>
+          <li>Collaborating with governments and partners to develop implementation models and capacity-building approaches for sustainable digital transformation.</li>
+        </ul>
+        <div class="tl-tags">
+          <span class="tl-tag">WHO Advisory</span>
+          <span class="tl-tag">Interoperability</span>
+          <span class="tl-tag">Digital Architecture</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="tl-meta">
+          <span class="tl-org">Lwala Community Alliance</span>
+          <span class="tl-period">Jul 2022 – Aug 2024</span>
+        </div>
+        <div class="tl-role">Senior Director, Digital Systems<br><small style="font-size:0.8rem;color:var(--slate-mid);font-family:'DM Mono',monospace;letter-spacing:0.08em">Nairobi, Kenya</small></div>
+        <ul class="tl-achievements">
+          <li>Scaled Kenya's National eCHIS to all 47 counties — empowering 100k+ Community Health Workers and improving healthcare access for 2M+ people.</li>
+          <li>Led a Digital Systems team growing from 19 to 30 staff; guided the first eCHIS rollout county (Migori) that served as national blueprint.</li>
+          <li>Redesigned the M&amp;E data pipeline — automating CommCare, OpenFN, and Salesforce integrations with Looker Studio dashboards, compressing 2 weeks of data entry to under 1 day.</li>
+          <li>Implemented HMIS and ERP systems for ~200 staff, delivering a 27% reduction in requisition costs.</li>
+          <li>Guided digital strategy that unlocked $50M+ in grant acquisitions; catalysed $10M+ in new revenue through strategic digital intervention design.</li>
+        </ul>
+        <div class="tl-tags">
+          <span class="tl-tag">eCHIS</span>
+          <span class="tl-tag">$50M+ Grants</span>
+          <span class="tl-tag">Data Engineering</span>
+          <span class="tl-tag">Team Leadership</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="tl-meta">
+          <span class="tl-org">NewGlobe Education</span>
+          <span class="tl-period">Nov 2020 – Jul 2022</span>
+        </div>
+        <div class="tl-role">Technology Director — Program Launch<br><small style="font-size:0.8rem;color:var(--slate-mid);font-family:'DM Mono',monospace;letter-spacing:0.08em">Rwanda · Nigeria · India</small></div>
+        <ul class="tl-achievements">
+          <li>Empowered 7,800 teachers and 822 school leaders across three countries with classroom technology tools, achieving 11% IT budget cost reduction in Year 1.</li>
+          <li>Pioneered cloud integration with Rwanda's government School Management System (SDMS), enabling 350k pupil records within the first week of going live.</li>
+          <li>Led a 13-person software development team to localise cloud applications for RwandaEQUIP, KwaraLEARN, and Manipur STAR programmes.</li>
+          <li>Established fully functional IT Operations departments with 18 indigenous staff per country, achieving 80% reduction in mean time to resolve.</li>
+        </ul>
+        <div class="tl-tags">
+          <span class="tl-tag">EdTech</span>
+          <span class="tl-tag">Cloud Integration</span>
+          <span class="tl-tag">Multi-Country</span>
+          <span class="tl-tag">Software Localisation</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="tl-meta">
+          <span class="tl-org">Ona Limited</span>
+          <span class="tl-period">Apr 2019 – Nov 2020</span>
+        </div>
+        <div class="tl-role">Technical Project Manager<br><small style="font-size:0.8rem;color:var(--slate-mid);font-family:'DM Mono',monospace;letter-spacing:0.08em">Nairobi, Kenya · Multi-Country</small></div>
+        <ul class="tl-achievements">
+          <li>Led Afyatek App in Tanzania — integrating biometric patient ID (Simprints) for 280k beneficiaries with real-time NiFi &amp; Periscope analytics pipelines.</li>
+          <li>Deployed Vietnam's MIECD SMS-based early childhood care system, reaching 35k+ children with 100% data sharing with health facilities.</li>
+          <li>Pioneered E-Register (OpenMRS + DHIS2 + WHO ANC) in Malawi; 91% of pregnant women attending ANC clinics post-launch.</li>
+        </ul>
+        <div class="tl-tags">
+          <span class="tl-tag">mHealth</span>
+          <span class="tl-tag">Biometrics</span>
+          <span class="tl-tag">OpenMRS / DHIS2</span>
+          <span class="tl-tag">Data Pipelines</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="tl-meta">
+          <span class="tl-org">Safaricom Ltd</span>
+          <span class="tl-period">Aug 2007 – Mar 2019</span>
+        </div>
+        <div class="tl-role">Graduate Management Trainee → Solutions Architect → Quality Governance Lead<br><small style="font-size:0.8rem;color:var(--slate-mid);font-family:'DM Mono',monospace;letter-spacing:0.08em">Nairobi, Kenya · 12 Years</small></div>
+        <ul class="tl-achievements">
+          <li>Engineered billing systems, subscriber databases, and provisioning infrastructure in Java, SQL, Bash, and Awk — serving millions of mobile subscribers.</li>
+          <li>Automated workforce management for 164 people with KPI frameworks; achieved 100% compliance across release management and ISO quality processes.</li>
+          <li>Spearheaded the Quality Assurance department formation, resulting in 100% reduction in critical production defects on digital products (in collaboration with Amdocs).</li>
+        </ul>
+        <div class="tl-tags">
+          <span class="tl-tag">Java / SQL / Bash</span>
+          <span class="tl-tag">Enterprise Architecture</span>
+          <span class="tl-tag">ISO Quality</span>
+          <span class="tl-tag">Telecom Systems</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- AI & TECH -->
+<section id="ai-tech">
+  <div class="container">
+    <div class="section-label">AI & Data Science</div>
+    <h2 class="section-title">Technical Depth<br><em>at Executive Scale</em></h2>
+
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <span class="project-icon">🧠</span>
+        <div class="project-name">Sheng Safety Guardrails — Responsible AI for Low-Resource Languages</div>
+        <div class="project-desc">Built and benchmarked guardrail models ensuring topic-safe AI interactions in Sheng (Swahili-English hybrid). Combined traditional ML classifiers, multilingual embeddings, and few-shot LLM prompting. Achieved ≈84% accuracy and 0.90 F1. Open-source pipelines published.</div>
+        <div class="project-tech">Girl Effect / UC Berkeley · ML · NLP · Responsible AI</div>
+      </div>
+
+      <div class="project-card">
+        <span class="project-icon">✈️</span>
+        <div class="project-name">Flight Delay Forecasting — Scalable Predictive Analytics Pipeline</div>
+        <div class="project-desc">Designed a PySpark / Databricks pipeline processing 31M+ records to predict U.S. flight delays. Engineered 58 features (temporal, congestion, weather) with MLflow-tracked models prioritising recall for operational decisions.</div>
+        <div class="project-tech">UC Berkeley · Databricks · PySpark · MLflow · Feature Engineering</div>
+      </div>
+
+      <div class="project-card">
+        <span class="project-icon">🤖</span>
+        <div class="project-name">CareerPro — AI Assistant for Job Search Optimisation</div>
+        <div class="project-desc">Developed an AI assistant increasing job-search success through behavioural nudges and personalised LLM-based recommendations. Applied A/B testing and feature monitoring to ensure model reliability and user impact.</div>
+        <div class="project-tech">UC Berkeley · LLMs · NLP · A/B Testing · Analytics</div>
+      </div>
+
+      <div class="project-card">
+        <span class="project-icon">🏥</span>
+        <div class="project-name">AI Risk Mapping Dashboard — Living Goods × SwissRe</div>
+        <div class="project-desc">Delivered automated, AI-augmented insights through a Power BI dashboard with dynamic reporting and AI-assisted risk mapping from unstructured textual sources. Advisory on data governance for informed consent and AI ethics.</div>
+        <div class="project-tech">Living Goods · SwissRe · Power BI · Generative AI · Risk Analytics</div>
+      </div>
+
+      <div class="project-card">
+        <span class="project-icon">🔬</span>
+        <div class="project-name">BERT Transfer Learning — Performance Exploration</div>
+        <div class="project-desc">Comparative study on transfer learning performance using BERT models across different fine-tuning strategies and domain adaptation tasks. Evaluated accuracy, convergence, and generalisation under limited data settings.</div>
+        <div class="project-tech">UC Berkeley · BERT / Transformers · NLP · Experimental Design</div>
+      </div>
+
+      <div class="project-card">
+        <span class="project-icon">🌐</span>
+        <div class="project-name">Kenya National eCHIS — ML-Augmented Community Health Intelligence</div>
+        <div class="project-desc">Led design and implementation of data pipelines integrating CommCare, OpenFN, and Salesforce with interactive Looker Studio dashboards. Compressed 2 weeks of manual data entry to under 1 day and enabled real-time decision support for 100k+ CHWs.</div>
+        <div class="project-tech">Lwala / Govt of Kenya · CommCare · Looker Studio · Pipeline Automation</div>
+      </div>
+
+    </div>
+
+    <div class="tech-stack">
+      <div class="stack-label">Technical Proficiencies</div>
+      <div class="stack-pills">
+        <span class="stack-pill">Python</span>
+        <span class="stack-pill">R</span>
+        <span class="stack-pill">Java</span>
+        <span class="stack-pill">SQL</span>
+        <span class="stack-pill">JavaScript</span>
+        <span class="stack-pill">Bash / AWK</span>
+        <span class="stack-pill">PySpark</span>
+        <span class="stack-pill">Databricks</span>
+        <span class="stack-pill">MLflow</span>
+        <span class="stack-pill">TensorFlow</span>
+        <span class="stack-pill">PyTorch</span>
+        <span class="stack-pill">Sagemaker</span>
+        <span class="stack-pill">AWS</span>
+        <span class="stack-pill">GCP</span>
+        <span class="stack-pill">Azure</span>
+        <span class="stack-pill">Docker</span>
+        <span class="stack-pill">FHIR / HL7</span>
+        <span class="stack-pill">OpenMRS</span>
+        <span class="stack-pill">DHIS2</span>
+        <span class="stack-pill">CommCare</span>
+        <span class="stack-pill">OpenFN</span>
+        <span class="stack-pill">Salesforce</span>
+        <span class="stack-pill">Power BI</span>
+        <span class="stack-pill">Looker Studio</span>
+        <span class="stack-pill">RapidSMS</span>
+        <span class="stack-pill">BERT / Transformers</span>
+        <span class="stack-pill">LLM Prompting</span>
+        <span class="stack-pill">REST APIs / JSON / XML</span>
+        <span class="stack-pill">ERP / CRM / HMIS / LIMS</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTORS -->
+<section id="sectors">
+  <div class="container">
+    <div class="section-label">Domains of Impact</div>
+    <h2 class="section-title">Where Technology<br><em>Meets Human Need</em></h2>
+
+    <div class="sectors-grid">
+      <div class="sector-card">
+        <div class="sector-num">01</div>
+        <div class="sector-title">Digital Health &amp; Health Systems</div>
+        <div class="sector-body">National-scale Electronic Community Health Information Systems, Maternal &amp; Child Health data platforms, biometric patient identity, interoperability (FHIR/HL7), and WHO advisory on Digital Public Infrastructure.</div>
+        <div class="sector-geo">Kenya · Uganda · Burkina Faso · Tanzania · Malawi · Vietnam · Bangladesh</div>
+      </div>
+
+      <div class="sector-card">
+        <div class="sector-num">02</div>
+        <div class="sector-title">Artificial Intelligence &amp; Responsible AI</div>
+        <div class="sector-body">LLM-based NLP pipelines, safety guardrails for low-resource languages, predictive analytics at 31M+ record scale, AI strategy and ethics frameworks, ML Engineering (MLflow, Databricks, Sagemaker, Transformers).</div>
+        <div class="sector-geo">UC Berkeley · Girl Effect · Living Goods · SwissRe</div>
+      </div>
+
+      <div class="sector-card">
+        <div class="sector-num">03</div>
+        <div class="sector-title">EdTech &amp; Public Education</div>
+        <div class="sector-body">Cloud school platform localisation, IT Operations establishment for 7,800+ teachers, integration with national education management systems, mobile learning and digital literacy for CHWs in low-connectivity environments.</div>
+        <div class="sector-geo">Rwanda · Nigeria · India</div>
+      </div>
+
+      <div class="sector-card">
+        <div class="sector-num">04</div>
+        <div class="sector-title">Government &amp; Digital Public Infrastructure</div>
+        <div class="sector-body">Ministerial advisory across 8+ governments, national Digital Health Strategies, sustainable public financing models (with SwissRe), data governance frameworks, and multi-stakeholder coalition leadership.</div>
+        <div class="sector-geo">Kenya · Uganda · Burkina Faso · Benin · Rwanda · India · Nigeria</div>
+      </div>
+
+      <div class="sector-card">
+        <div class="sector-num">05</div>
+        <div class="sector-title">Telecom &amp; Enterprise Systems</div>
+        <div class="sector-body">12 years at Safaricom — billing infrastructure, subscriber databases, SS7 signalling, ISO quality assurance, release management, QA department formation, and solutions architecture at enterprise scale.</div>
+        <div class="sector-geo">Kenya · Africa's Leading Telco</div>
+      </div>
+
+      <div class="sector-card">
+        <div class="sector-num">06</div>
+        <div class="sector-title">Resource Mobilisation &amp; Executive Leadership</div>
+        <div class="sector-body">$60M+ in grants guided through strategic digital intervention design. Chair of the CHU4UHC Digital Health Committee. Teams scaled from 0 to 30 across multiple countries. OKR and portfolio management at organisational level.</div>
+        <div class="sector-geo">Multi-lateral Donors · Global Partners</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="container">
+    <div class="section-label">Education &amp; Credentials</div>
+    <h2 class="section-title">Lifelong<br><em>Technical Rigour</em></h2>
+
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="edu-year">2024</div>
+        <div>
+          <div class="edu-inst">UC Berkeley, USA</div>
+          <div class="edu-degree">Master of Information &amp; Data Science</div>
+          <div class="edu-location">Jan 2024 – Present · Active</div>
+        </div>
+      </div>
+
+      <div class="edu-card">
+        <div class="edu-year">2021</div>
+        <div>
+          <div class="edu-inst">University of South Wales, UK</div>
+          <div class="edu-degree">Master of Business Administration</div>
+          <div class="edu-location">Apr 2019 – Nov 2021</div>
+        </div>
+      </div>
+
+      <div class="edu-card">
+        <div class="edu-year">2007</div>
+        <div>
+          <div class="edu-inst">Jomo Kenyatta University, Kenya</div>
+          <div class="edu-degree">Bachelor of Science, Computer Science</div>
+          <div class="edu-location">Apr 2003 – May 2007</div>
+        </div>
+      </div>
+
+      <div class="edu-card">
+        <div class="edu-year">2024</div>
+        <div>
+          <div class="edu-inst">University of Washington</div>
+          <div class="edu-degree">Leadership &amp; Management in Health</div>
+          <div class="edu-location">Certification · Jan 2024</div>
+        </div>
+      </div>
+
+      <div class="edu-card">
+        <div class="edu-year">2019</div>
+        <div>
+          <div class="edu-inst">Project Management Institute, Kenya</div>
+          <div class="edu-degree">Project Management Professional (PMP)</div>
+          <div class="edu-location">Certification · Feb 2019</div>
+        </div>
+      </div>
+
+      <div class="edu-card">
+        <div class="edu-year">2023</div>
+        <div>
+          <div class="edu-inst">TRREE International</div>
+          <div class="edu-degree">Research Ethics Evaluation</div>
+          <div class="edu-location">Certification · Apr 2023</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Languages -->
+    <div style="margin-top:4rem;">
+      <div class="section-label" style="margin-bottom:1.5rem;">Languages</div>
+      <div style="display:flex;gap:1.5rem;flex-wrap:wrap;">
+        <div style="padding:1rem 1.5rem;background:white;border:1px solid var(--mist);">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--ink);">English</div>
+          <div style="font-family:'DM Mono',monospace;font-size:0.6rem;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;margin-top:0.2rem;">Native / Fluent</div>
+        </div>
+        <div style="padding:1rem 1.5rem;background:white;border:1px solid var(--mist);">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--ink);">Swahili</div>
+          <div style="font-family:'DM Mono',monospace;font-size:0.6rem;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;margin-top:0.2rem;">Native / Fluent</div>
+        </div>
+        <div style="padding:1rem 1.5rem;background:white;border:1px solid var(--mist);">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--ink);">French</div>
+          <div style="font-family:'DM Mono',monospace;font-size:0.6rem;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;margin-top:0.2rem;">Professional</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-label">Get In Touch</div>
+    <h2 class="contact-title">Ready to Build<br><em>What Matters</em></h2>
+    <p class="contact-sub">Open to Chief-level roles in Digital Health, AI Strategy, and Digital Public Infrastructure.</p>
+
+    <div class="contact-links">
+      <a href="mailto:hngondoki@gmail.com" class="contact-link">
+        ✉ hngondoki@gmail.com
+      </a>
+      <a href="https://linkedin.com/in/hngondoki" target="_blank" class="contact-link">
+        ↗ LinkedIn
+      </a>
+      <a href="https://github.com/hngondoki" target="_blank" class="contact-link">
+        ↗ GitHub
+      </a>
+      <a href="https://medium.com/@hngondoki" target="_blank" class="contact-link">
+        ↗ Medium
+      </a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-name">Hildah Ngondoki &nbsp;·&nbsp; Executive Leader in Digital Health &amp; AI</div>
+    <div class="footer-copy">Built for impact. © 2026</div>
+  </div>
+</section>
+
+<script>
+  // Scroll-triggered timeline animation
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.timeline-item').forEach((el, i) => {
+    el.style.transitionDelay = `${i * 0.08}s`;
+    observer.observe(el);
+  });
+
+  // Smooth nav hide on scroll down, show on scroll up
+  let lastY = 0;
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if (y > lastY && y > 80) {
+      nav.style.transform = 'translateY(-100%)';
+    } else {
+      nav.style.transform = 'translateY(0)';
+    }
+    lastY = y;
+  }, { passive: true });
+
+  nav.style.transition = 'transform 0.3s ease';
+
+  // Animate stat numbers on scroll into view
+  const statObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll('.stat-card').forEach(el => statObserver.observe(el));
+</script>
+
+</body>
+</html>
 
